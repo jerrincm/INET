@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+net_user1,net.usage,model_net_usage,group_name_test_user,1,0,0,0
+net_user2,net.usage,model_net_usage,group_name_test_manager,1,1,1,1

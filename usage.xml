@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>    
+            
+            <record model="ir.ui.view" id="netusage_tree_view">
+                <field name="name">net.usage.tree</field>
+                <field name="model">net.usage</field>
+                <field name="type">tree</field>
+                <field name="arch" type="xml">
+                    <tree string="tree_string">
+                        <field name="ncs_starttime"/>
+                        <field name="ncs_stoptime"/>
+                        <field name="ncs_download"/>
+                        <field name="ncs_upload"/>
+                        <field name="ncs_total"/>
+                        <field name="ncs_duration"/>
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="netusage_form_view">
+                <field name="name">net.usage.form</field>
+                <field name="model">net.usage</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="form_string">
+					<sheet>
+					<group>
+					  <group>
+                        <field name="ncs_starttime"/>
+                        <field name="ncs_stoptime"/>
+                        <field name="ncs_download"/>
+                        <field name="ncs_upload"/>
+                        <field name="ncs_total"/>
+                        <field name="ncs_duration"/>
+						</group>
+					</group>
+					</sheet>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_netusage_tree_view">
+                <field name="name">Net Usage</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">net.usage</field>
+		   <!-- <field name="domain">[('field_name','condition',criteria)]</field>-->
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="netusage_tree_view"/>
+            </record>
+            <menuitem id="main_menu" name="Net Usage"/>	 
+            <menuitem id="ncs_use" name="Net Usage" parent="main_menu"/>
+			<menuitem id="netusage_menu" name="Net Usage" parent="ncs_use" action="action_netusage_tree_view"/>
+
+    
+    </data>
+</openerp>
+
