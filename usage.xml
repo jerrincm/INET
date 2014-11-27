@@ -28,7 +28,7 @@
 					<group>
 					  <group>
                         <field name="ncs_starttime"/>
-                        <field name="ncs_stoptime"/>
+                        <field name="ncs_stoptime" on_change="onchange_return_date(ncs_starttime,ncs_stoptime)"/>
                         <field name="ncs_download"/>
                         <field name="ncs_upload"/>
                         <field name="ncs_total"/>
